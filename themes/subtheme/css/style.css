@@ -1,0 +1,303 @@
+/**
+ * Place your custom styles here.
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+
+.clearfix { clear: both; }
+
+#container {
+  max-width: 500px;
+  background: #f1f1f1;
+  overflow: auto;
+  margin: 0 auto;
+}
+#container .audio-title {
+  text-align: center;
+}
+#container .audio-title h2{
+  color:#60A23D;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size:36px;
+  font-weight: 600;
+  margin:0 auto 15px;
+  line-height: normal;
+}
+#container .audio-title h2 span{
+  color:#0070B3;
+}
+#audio-image {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+#audio-image .cover { width: 100%; height: 210px; }
+
+#audio-info { text-align: center; color: #0070B3;}
+
+#audio-info .artist { font-weight: bold; }
+
+input#volume {
+ /* width: 95%;
+  margin-left: 2%;*/
+  max-width: 100px;
+ /* -webkit-appearance: none !important;*/
+  /*background: #ccc;*/
+  height:35px;
+}
+input#volume::-webkit-slider-thumb {
+ -webkit-appearance:none !important;
+ background:url(../images/knob.png) no-repeat;
+ height:12px;
+ width:12px;
+}
+
+#buttons {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  
+  overflow: auto;
+}
+#buttons button{
+  margin-right:20px;
+  padding: 7px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  background: #514943; /* Old browsers */
+background: -moz-linear-gradient(top, #514943 0%, #38332e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #514943 0%,#38332e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #514943 0%,#38332e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#514943', endColorstr='#38332e',GradientType=0 ); /* IE6-9 */
+}
+#buttons button img{
+  width: 100%;
+}
+button#play {
+  width:35px;
+  height: 35px;
+  /*background: url(../images/play.png) no-repeat;*/
+  float: left;
+}
+
+button#pause {
+  width: 35px;
+  height: 35px;
+  /*background: url(../images/pause.png) no-repeat;*/
+  float: left;
+}
+
+button#stop {
+  width:35px;
+  height:35px;
+  /*background: url(../images/stop.png) no-repeat;*/
+  float: left;
+}
+
+button#prev {
+  width: 35px;
+  height: 35px;
+  /*background: url(../images/prev.png) no-repeat;*/
+  float: left;
+}
+
+button#next {
+  width: 35px;
+  height: 35px;
+  /*background: url(../images/next.png) no-repeat;*/
+  float: left;
+}
+
+#tracker {
+  position: relative;
+  width: 100%;
+}
+
+#progress-bar {
+  width: 85%;
+  margin-bottom: 10px;
+  margin-top: 9px;
+  height: 10px;
+  /*background: url(../images/progress_bg.png) no-repeat;
+  background-size: 100%;*/
+  background: #f1f1f1;
+  float: left;
+  border-radius: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  overflow: hidden;
+}
+
+#progress {
+  /*background: url(../images/progress.png) no-repeat;
+  background-size: 100%;*/
+  background:#0070B3;
+  height: 10px;
+  display: inline-block;
+  position: relative;
+  top:-4px;
+}
+
+#duration {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: 4px 8px;
+  background: #000;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+#playlist { list-style: none; }
+
+#playlist li {
+  cursor: pointer;
+  margin: 0 0 8px;
+  padding:0 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  font-weight: 600;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow:0px 2px 5px 0px rgba(0,0,0,0.5);
+  box-shadow:0px 2px 5px 0px rgba(0,0,0,0.5);
+  line-height: 35px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+}
+#playlist li span{
+  display: inline-block;
+  float: right;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
+}
+#playlist li.blue_btn{
+  background: #2786cf; /* Old browsers */
+background: -moz-linear-gradient(top, #2786cf 0%, #015f89 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #2786cf 0%,#015f89 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #2786cf 0%,#015f89 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2786cf', endColorstr='#015f89',GradientType=0 ); /* IE6-9 */
+border: 1px solid #2082C6;
+}
+#playlist li.blue_btn:hover{
+background: #015f89; /* Old browsers */
+background: -moz-linear-gradient(top, #015f89 0%, #2786cf 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #015f89 0%,#2786cf 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #015f89 0%,#2786cf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#015f89', endColorstr='#2786cf',GradientType=0 ); /* IE6-9 */
+}
+
+#playlist li.red_btn{
+background: #f11918; /* Old browsers */
+background: -moz-linear-gradient(top, #f11918 0%, #b61312 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f11918 0%,#b61312 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f11918 0%,#b61312 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f11918', endColorstr='#b61312',GradientType=0 ); /* IE6-9 */
+border: 1px solid #BB1515;
+}
+#playlist li.red_btn:hover{
+background: #b61312; /* Old browsers */
+background: -moz-linear-gradient(top, #b61312 0%, #f11918 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #b61312 0%,#f11918 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #b61312 0%,#f11918 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b61312', endColorstr='#f11918',GradientType=0 ); /* IE6-9 */
+}
+#playlist li.green_btn{
+background: #66a336; /* Old browsers */
+background: -moz-linear-gradient(top, #66a336 0%, #417e2b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #66a336 0%,#417e2b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #66a336 0%,#417e2b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66a336', endColorstr='#417e2b',GradientType=0 ); /* IE6-9 */
+border: 1px solid #457B2B;
+}
+#playlist li.green_btn:hover{
+background: #417e2b; /* Old browsers */
+background: -moz-linear-gradient(top, #417e2b 0%, #66a336 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #417e2b 0%,#66a336 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #417e2b 0%,#66a336 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#417e2b', endColorstr='#66a336',GradientType=0 ); /* IE6-9 */
+}
+#playlist li.active {
+  /*font-weight: bold;
+  padding: 3px;
+  background: #666;*/
+}
+#playlist {
+    float: left;
+    width:35%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.img-play {
+   padding-right: 15px;
+   width: 65%;
+float: left;
+}
+#audio-image .cover {
+
+}
+#audio-player{
+  background-color: #26282C;
+border-top: 5px solid #0070B3;
+padding:15px;
+}
+
+.volume-wrap{
+  float: right;
+}
+.volume-wrap button{
+  width:35px;
+  height:35px;
+  float: left;
+  margin-right:10px !important;
+  padding: 7px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  background: #514943; /* Old browsers */
+background: -moz-linear-gradient(top, #514943 0%, #38332e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #514943 0%,#38332e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #514943 0%,#38332e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#514943', endColorstr='#38332e',GradientType=0 ); /* IE6-9 */
+}
+.volume-wrap button img{
+  width: 100%;
+}
+.volume-btn{
+  position: relative;
+  float: left;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  margin-right: 15px;
+}
+.volume-btn span{
+  position: absolute;
+  width: 3px;
+  height: 50px;
+  display: inline-block;
+  background-color: #fff;
+  top: -5px;
+  left: 18px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Safari 3-8 */
+    transform: rotate(45deg);
+}
